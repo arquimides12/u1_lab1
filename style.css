@@ -1,0 +1,11 @@
+/* Centrado básico para la página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f8f8f8;
+    font-family: Arial, sans-serif;
+  }
+  
