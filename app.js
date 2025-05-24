@@ -1,6 +1,6 @@
 import "./components/product-card.js";
 
-window.addEventListener('DOMContentLoaded', () => {
+/*window.addEventListener('DOMContentLoaded', () => {
   const card = document.querySelector('product-card');
 
   setTimeout(() => {
@@ -9,4 +9,4 @@ window.addEventListener('DOMContentLoaded', () => {
     card.setAttribute('img', './img/nike.png');  
     card.setAttribute('description', 'Cómodos zapatos para correr y caminar');
   }, 3000);
-});
+});*/ 

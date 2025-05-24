@@ -9,11 +9,17 @@ class productCard extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    this[name] = newValue;
+    // Solo renderizamos, no asignamos this[name] para evitar loop infinito
     this.render();
   }
 
   get template() {
+    // Tomamos valores directamente desde los atributos
+    const title = this.getAttribute('title') || 'Título del producto';
+    const price = this.getAttribute('price') || '$0';
+    const img = this.getAttribute('img') || './img/nike.png';
+    const description = this.getAttribute('description') || 'Descripción del producto';
+
     const template = document.createElement("template");
     template.innerHTML = `
       <style>
@@ -170,12 +176,12 @@ class productCard extends HTMLElement {
         }
       </style>
 
-      <h2>${this.title || 'Título del producto'}</h2>
-      <p class="description">${this.description || 'Descripción del producto'}</p>
+      <h2>${title}</h2>
+      <p class="description">${description}</p>
 
       <div class="img-container">
-        <img src="${this.img || './img/nike.png'}" alt="${this.title || 'Producto'}" />
-        <div class="price-tag">${this.price || '$0'}</div>
+        <img src="${img}" alt="${title}" />
+        <div class="price-tag">${price}</div>
       </div>
 
       <button>Shop Now</button>
